@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIW TAREA 4</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#mostrar').click(function () {
+                var i = 0;
+                var stop = setInterval(showImg, 600);
+
+                function showImg() {
+                    if (i < $('li').length) {
+                        $('li').eq(i).fadeIn(400);
+                        i++;
+                    }
+                    else
+                        clearInterval(stop);
+                }
+            });
+
+            $('#ocultar').click(function () {
+                var i = $('li').length;
+                var stop = setInterval(hideImg, 600);
+
+                function hideImg() {
+                    if (i <= $('li').length) {
+                        $('li').eq(i).fadeOut(400);
+                        i--;
+                    }
+                    else
+                        clearInterval(stop);
+                }
+            });
+        });       
+    </script>
+
+    <style>
+        li {
+            float: left;
+            list-style: none;
+            margin: 0 25px 25px 25px;
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <a href="#" id="mostrar">Mostrar</a> / <a href="#" id="ocultar">Ocultar</a>
+
+    <ul>
+
+        <li><img src="tux.png" alt="Pinguino1"></li>
+        <li><img src="tux.png" alt="Pinguino2"></li>
+        <li><img src="tux.png" alt="Pinguino3"></li>
+        <li><img src="tux.png" alt="Pinguino4"></li>
+        <li><img src="tux.png" alt="Pinguino5"></li>
+        <li><img src="tux.png" alt="Pinguino6"></li>
+        <li><img src="tux.png" alt="Pinguino7"></li>
+        <li><img src="tux.png" alt="Pinguino8"></li>
+
+    </ul>
+
+</body>
+
+</html>
